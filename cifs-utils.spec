@@ -9,6 +9,7 @@ Source0:	ftp://ftp.samba.org/pub/linux-cifs/cifs-utils/%{name}-%{version}.tar.gz
 #BuildRequires:	talloc-devel >= 4.0
 BuildRequires:	pkgconfig(talloc)
 BuildRequires:	keyutils-devel
+BuildRequires:	krb5-devel
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
