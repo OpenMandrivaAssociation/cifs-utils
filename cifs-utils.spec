@@ -5,7 +5,7 @@ License:	GPLv3
 Group:		Networking/Other
 Release:	%mkrel 0.1
 URL:		http://www.samba.org/linux-cifs/cifs-utils/
-Source0:	ftp://ftp.samba.org/pub/linux-cifs/cifs-utils/%{name}-%{version}.tar.gz
+Source0:	ftp://ftp.samba.org/pub/linux-cifs/cifs-utils/%{name}-%{version}.tar.bz2
 #BuildRequires:	talloc-devel >= 4.0
 BuildRequires:	pkgconfig(talloc)
 BuildRequires:	keyutils-devel
