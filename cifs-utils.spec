@@ -3,13 +3,14 @@ Name:		cifs-utils
 Version:	4.3
 License:	GPLv3
 Group:		Networking/Other
-Release:	%mkrel 1
+Release:	%mkrel 2
 URL:		http://www.samba.org/linux-cifs/cifs-utils/
 Source0:	ftp://ftp.samba.org/pub/linux-cifs/cifs-utils/%{name}-%{version}.tar.bz2
 #BuildRequires:	talloc-devel >= 4.0
 BuildRequires:	pkgconfig(talloc)
 BuildRequires:	keyutils-devel
 BuildRequires:	krb5-devel
+BuildRequires:	cap-devel
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
