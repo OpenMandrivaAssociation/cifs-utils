@@ -1,9 +1,9 @@
 Summary:	Tools for Managing Linux CIFS Client Filesystems
 Name:		cifs-utils
-Version:	4.8.1
+Version:	4.9
 License:	GPLv3
 Group:		Networking/Other
-Release:	%mkrel 2
+Release:	%mkrel 1
 URL:		http://www.samba.org/linux-cifs/cifs-utils/
 Source0:	ftp://ftp.samba.org/pub/linux-cifs/cifs-utils/%{name}-%{version}.tar.bz2
 #BuildRequires:	talloc-devel >= 4.0
