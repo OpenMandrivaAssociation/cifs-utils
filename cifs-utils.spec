@@ -3,7 +3,7 @@ Name:		cifs-utils
 Version:	5.1
 License:	GPLv3
 Group:		Networking/Other
-Release:	%mkrel 1
+Release:	%mkrel 2
 URL:		http://www.samba.org/linux-cifs/cifs-utils/
 Source0:	ftp://ftp.samba.org/pub/linux-cifs/cifs-utils/%{name}-%{version}.tar.bz2
 Source1:	ftp://ftp.samba.org/pub/linux-cifs/cifs-utils/%{name}-%{version}.tar.bz2.asc
@@ -11,7 +11,7 @@ Source1:	ftp://ftp.samba.org/pub/linux-cifs/cifs-utils/%{name}-%{version}.tar.bz
 BuildRequires:	pkgconfig(talloc)
 BuildRequires:	keyutils-devel
 BuildRequires:	krb5-devel
-BuildRequires:	cap-devel
+BuildRequires:	libcap-ng-devel
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 Suggests:	sudo nss_wins
 Provides:	mount-cifs = %{version}
