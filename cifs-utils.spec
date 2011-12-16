@@ -1,9 +1,9 @@
 Summary:	Tools for Managing Linux CIFS Client Filesystems
 Name:		cifs-utils
-Version:	5.1
+Version:	5.2
 License:	GPLv3
 Group:		Networking/Other
-Release:	%mkrel 2
+Release:	1
 URL:		http://www.samba.org/linux-cifs/cifs-utils/
 Source0:	ftp://ftp.samba.org/pub/linux-cifs/cifs-utils/%{name}-%{version}.tar.bz2
 Source1:	ftp://ftp.samba.org/pub/linux-cifs/cifs-utils/%{name}-%{version}.tar.bz2.asc
@@ -12,7 +12,6 @@ BuildRequires:	pkgconfig(talloc)
 BuildRequires:	keyutils-devel
 BuildRequires:	krb5-devel
 BuildRequires:	libcap-ng-devel
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 Suggests:	sudo nss_wins
 Provides:	mount-cifs = %{version}
 Obsoletes:	mount-cifs <= 4.0
@@ -41,11 +40,7 @@ ln -s ../sbin/mount.cifs %{buildroot}/bin/mount.cifs
 # Hack for smb4k
 ln -s umount %{buildroot}/bin/umount.cifs
 
-%clean
-rm -rf %{buildroot}
-
 %files
-%defattr(-,root,root)
 %doc AUTHORS README doc/linux-cifs-client-guide.odt
 /sbin/cifs.upcall
 /sbin/mount.cifs
