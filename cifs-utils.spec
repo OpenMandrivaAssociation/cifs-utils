@@ -3,18 +3,19 @@ Name:		cifs-utils
 Version:	5.2
 License:	GPLv3
 Group:		Networking/Other
-Release:	1
+Release:	2
 URL:		http://www.samba.org/linux-cifs/cifs-utils/
 Source0:	ftp://ftp.samba.org/pub/linux-cifs/cifs-utils/%{name}-%{version}.tar.bz2
 Source1:	ftp://ftp.samba.org/pub/linux-cifs/cifs-utils/%{name}-%{version}.tar.bz2.asc
-#BuildRequires:	talloc-devel >= 4.0
+Patch0:         0001-contrib-add-a-set-of-sample-etc-request-key.d-files.patch
 BuildRequires:	pkgconfig(talloc)
+BuildRequires:	pkgconfig(libcap-ng)
 BuildRequires:	keyutils-devel
 BuildRequires:	krb5-devel
-BuildRequires:	libcap-ng-devel
 Suggests:	sudo nss_wins
 Provides:	mount-cifs = %{version}
 Obsoletes:	mount-cifs <= 4.0
+Requires:       keyutils
 
 %description
 Tools for Managing Linux CIFS Client Filesystems.
@@ -22,6 +23,7 @@ Tools for Managing Linux CIFS Client Filesystems.
 %prep
 
 %setup -q
+%patch0 -p1
 
 %build
 %serverbuild
@@ -40,8 +42,15 @@ ln -s ../sbin/mount.cifs %{buildroot}/bin/mount.cifs
 # Hack for smb4k
 ln -s umount %{buildroot}/bin/umount.cifs
 
+mkdir -p %{buildroot}%{_sysconfdir}/request-key.d
+install -m 644 contrib/request-key.d/cifs.idmap.conf %{buildroot}%{_sysconfdir}/request-key.d
+install -m 644 contrib/request-key.d/cifs.spnego.conf %{buildroot}%{_sysconfdir}/request-key.d
+cp contrib/README contrib/README.keyutils-1.5.5
+
 %files
-%doc AUTHORS README doc/linux-cifs-client-guide.odt
+%doc AUTHORS README doc/linux-cifs-client-guide.odt contrib/README.keyutils-1.5.5
+%config(noreplace) %{_sysconfdir}/request-key.d/cifs.idmap.conf
+%config(noreplace) %{_sysconfdir}/request-key.d/cifs.spnego.conf
 /sbin/cifs.upcall
 /sbin/mount.cifs
 /bin/mount.cifs
