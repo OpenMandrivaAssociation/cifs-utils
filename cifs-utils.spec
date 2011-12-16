@@ -45,10 +45,10 @@ ln -s umount %{buildroot}/bin/umount.cifs
 mkdir -p %{buildroot}%{_sysconfdir}/request-key.d
 install -m 644 contrib/request-key.d/cifs.idmap.conf %{buildroot}%{_sysconfdir}/request-key.d
 install -m 644 contrib/request-key.d/cifs.spnego.conf %{buildroot}%{_sysconfdir}/request-key.d
-cp contrib/README contrib/README.keyutils-1.5.5
+cp contrib/request-key.d/README contrib/request-key.d/README.keyutils-1.5.5
 
 %files
-%doc AUTHORS README doc/linux-cifs-client-guide.odt contrib/README.keyutils-1.5.5
+%doc AUTHORS README doc/linux-cifs-client-guide.odt contrib/request-key.d/README.keyutils-1.5.5
 %config(noreplace) %{_sysconfdir}/request-key.d/cifs.idmap.conf
 %config(noreplace) %{_sysconfdir}/request-key.d/cifs.spnego.conf
 /sbin/cifs.upcall
