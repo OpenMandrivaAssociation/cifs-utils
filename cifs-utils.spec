@@ -49,9 +49,11 @@ cp contrib/request-key.d/README contrib/request-key.d/README.keyutils-1.5.5
 %doc AUTHORS README doc/linux-cifs-client-guide.odt contrib/request-key.d/README.keyutils-1.5.5
 %config(noreplace) %{_sysconfdir}/request-key.d/cifs.idmap.conf
 %config(noreplace) %{_sysconfdir}/request-key.d/cifs.spnego.conf
+%{_bindir}/cifscreds
 /sbin/cifs.upcall
 /sbin/mount.cifs
 /bin/mount.cifs
 /bin/umount.cifs
 %{_mandir}/man8/cifs.upcall.8*
 %{_mandir}/man8/mount.cifs.8*
+%{_mandir}/man1/cifscreds.1*
