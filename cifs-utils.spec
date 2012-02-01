@@ -1,13 +1,12 @@
 Summary:	Tools for Managing Linux CIFS Client Filesystems
 Name:		cifs-utils
-Version:	5.2
+Version:	5.3
 License:	GPLv3
 Group:		Networking/Other
-Release:	2
+Release:	1
 URL:		http://www.samba.org/linux-cifs/cifs-utils/
 Source0:	ftp://ftp.samba.org/pub/linux-cifs/cifs-utils/%{name}-%{version}.tar.bz2
 Source1:	ftp://ftp.samba.org/pub/linux-cifs/cifs-utils/%{name}-%{version}.tar.bz2.asc
-Patch0:         0001-contrib-add-a-set-of-sample-etc-request-key.d-files.patch
 BuildRequires:	pkgconfig(talloc)
 BuildRequires:	pkgconfig(libcap-ng)
 BuildRequires:	keyutils-devel
@@ -23,7 +22,6 @@ Tools for Managing Linux CIFS Client Filesystems.
 %prep
 
 %setup -q
-%patch0 -p1
 
 %build
 %serverbuild
