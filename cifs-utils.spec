@@ -12,6 +12,7 @@ BuildRequires:	pkgconfig(libcap-ng)
 BuildRequires:	keyutils-devel
 BuildRequires:	krb5-devel
 BuildRequires:	acl-devel
+BuildRequires:	pkgconfig(wbclient)
 Suggests:	sudo nss_wins
 Provides:	mount-cifs = %{version}
 Obsoletes:	mount-cifs <= 4.0
