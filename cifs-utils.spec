@@ -1,6 +1,6 @@
 Summary:	Tools for Managing Linux CIFS Client Filesystems
 Name:		cifs-utils
-Version:	5.3
+Version:	5.4
 License:	GPLv3
 Group:		Networking/Other
 Release:	1
@@ -16,12 +16,15 @@ Provides:	mount-cifs = %{version}
 Obsoletes:	mount-cifs <= 4.0
 Requires:       keyutils
 
+Patch0:		FORTIFY_SOURCE_ftrunkate.patch
+
 %description
 Tools for Managing Linux CIFS Client Filesystems.
 
 %prep
 
 %setup -q
+%patch0 -p1
 
 %build
 %serverbuild
@@ -50,10 +53,18 @@ cp contrib/request-key.d/README contrib/request-key.d/README.keyutils-1.5.5
 %config(noreplace) %{_sysconfdir}/request-key.d/cifs.idmap.conf
 %config(noreplace) %{_sysconfdir}/request-key.d/cifs.spnego.conf
 %{_bindir}/cifscreds
+%{_bindir}/getcifsacl
+%{_bindir}/setcifsacl
+
 /sbin/cifs.upcall
 /sbin/mount.cifs
+/sbin/cifs.idmap
 /bin/mount.cifs
 /bin/umount.cifs
+
 %{_mandir}/man8/cifs.upcall.8*
 %{_mandir}/man8/mount.cifs.8*
+%{_mandir}/man8/cifs.idmap.8.*
 %{_mandir}/man1/cifscreds.1*
+%{_mandir}/man1/getcifsacl.1.*
+%{_mandir}/man1/setcifsacl.1.*
