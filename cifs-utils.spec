@@ -7,6 +7,7 @@ Release:	1
 URL:		http://www.samba.org/linux-cifs/cifs-utils/
 Source0:	ftp://ftp.samba.org/pub/linux-cifs/cifs-utils/%{name}-%{version}.tar.bz2
 Source1:	ftp://ftp.samba.org/pub/linux-cifs/cifs-utils/%{name}-%{version}.tar.bz2.asc
+BuildRequires:	autoconf automake libtool
 BuildRequires:	pkgconfig(talloc)
 BuildRequires:	pkgconfig(libcap-ng)
 BuildRequires:	keyutils-devel
@@ -28,9 +29,13 @@ Tools for Managing Linux CIFS Client Filesystems.
 %setup -q
 %patch0 -p1
 
+# remove -Werror
+perl -pi -e "s|-Werror||g" Makefile*
+
 %build
 %serverbuild
 rm -rf autom4te.cache
+autoreconf -fi
 %configure2_5x \
     --sbindir=/sbin
 
