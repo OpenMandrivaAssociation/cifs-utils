@@ -1,6 +1,6 @@
 Summary:	Tools for Managing Linux CIFS Client Filesystems
 Name:		cifs-utils
-Version:	5.4
+Version:	5.5
 License:	GPLv3
 Group:		Networking/Other
 Release:	1
@@ -27,7 +27,7 @@ Tools for Managing Linux CIFS Client Filesystems.
 %prep
 
 %setup -q
-%patch0 -p1
+#%patch0 -p1
 
 # remove -Werror
 perl -pi -e "s|-Werror||g" Makefile*
