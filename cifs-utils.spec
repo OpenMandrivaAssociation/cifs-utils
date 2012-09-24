@@ -1,6 +1,6 @@
 Summary:	Tools for Managing Linux CIFS Client Filesystems
 Name:		cifs-utils
-Version:	5.5
+Version:	5.6
 License:	GPLv3
 Group:		Networking/Other
 Release:	1
