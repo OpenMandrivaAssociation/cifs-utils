@@ -1,3 +1,5 @@
 sources:
-  "cifs-utils-5.6.tar.bz2:"	1f70f55b67eb2c011aafbb8c5b5b6eed20a8bcb9
-  "cifs-utils-5.6.tar.bz2.asc:"	fd8ca74cd9382832981d0b5156daa747579ec83a
+  "cifs-utils-5.7.tar.bz2": 4a997fa0cef3b7c4ba4c5b959b52ca73437b8098
+  cifs-utils-5.8.tar.bz2: ed96d7ef9164a7784a7ecef705857b63d3ffccdb
+  cifs-utils-5.7.tar.bz2.asc: 3e88e6bf5d9f07d41d44abe07eab806983637eb5
+  cifs-utils-5.8.tar.bz2.asc: aba9e2464f5c14eb15cae58c6121d9c68fe567aa

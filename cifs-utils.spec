@@ -1,6 +1,6 @@
 Summary:	Tools for Managing Linux CIFS Client Filesystems
 Name:		cifs-utils
-Version:	5.6
+Version:	5.8
 License:	GPLv3
 Group:		Networking/Other
 Release:	1
@@ -14,6 +14,7 @@ BuildRequires:	keyutils-devel
 BuildRequires:	krb5-devel
 BuildRequires:	acl-devel
 BuildRequires:	pkgconfig(wbclient)
+BuildRequires:	samba-winbind
 Suggests:	sudo nss_wins
 Provides:	mount-cifs = %{version}
 Obsoletes:	mount-cifs <= 4.0
@@ -42,8 +43,6 @@ autoreconf -fi
 %make
 
 %install
-rm -rf %{buildroot}
-
 %makeinstall_std
 mkdir %{buildroot}/bin
 ln -s ../sbin/mount.cifs %{buildroot}/bin/mount.cifs
