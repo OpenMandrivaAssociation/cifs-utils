@@ -4,23 +4,22 @@ Version:	5.8
 License:	GPLv3
 Group:		Networking/Other
 Release:	1
-URL:		http://www.samba.org/linux-cifs/cifs-utils/
+Url:		http://www.samba.org/linux-cifs/cifs-utils/
 Source0:	ftp://ftp.samba.org/pub/linux-cifs/cifs-utils/%{name}-%{version}.tar.bz2
 Source1:	ftp://ftp.samba.org/pub/linux-cifs/cifs-utils/%{name}-%{version}.tar.bz2.asc
-BuildRequires:	autoconf automake libtool
-BuildRequires:	pkgconfig(talloc)
-BuildRequires:	pkgconfig(libcap-ng)
+Patch0:		FORTIFY_SOURCE_ftrunkate.patch
+
+BuildRequires:	libtool
+BuildRequires:	samba-winbind
+BuildRequires:	acl-devel
 BuildRequires:	keyutils-devel
 BuildRequires:	krb5-devel
-BuildRequires:	acl-devel
+BuildRequires:	pkgconfig(libcap-ng)
+BuildRequires:	pkgconfig(talloc)
 BuildRequires:	pkgconfig(wbclient)
-BuildRequires:	samba-winbind
+Requires:       keyutils
 Suggests:	sudo nss_wins
 Provides:	mount-cifs = %{version}
-Obsoletes:	mount-cifs <= 4.0
-Requires:       keyutils
-
-Patch0:		FORTIFY_SOURCE_ftrunkate.patch
 
 %description
 Tools for Managing Linux CIFS Client Filesystems.
@@ -28,7 +27,6 @@ Tools for Managing Linux CIFS Client Filesystems.
 %prep
 
 %setup -q
-#%patch0 -p1
 
 # remove -Werror
 perl -pi -e "s|-Werror||g" Makefile*
@@ -38,7 +36,7 @@ perl -pi -e "s|-Werror||g" Makefile*
 rm -rf autom4te.cache
 autoreconf -fi
 %configure2_5x \
-    --sbindir=/sbin
+	--sbindir=/sbin
 
 %make
 
@@ -70,7 +68,8 @@ cp contrib/request-key.d/README contrib/request-key.d/README.keyutils-1.5.5
 
 %{_mandir}/man8/cifs.upcall.8*
 %{_mandir}/man8/mount.cifs.8*
-%{_mandir}/man8/cifs.idmap.8.*
+%{_mandir}/man8/cifs.idmap.8*
 %{_mandir}/man1/cifscreds.1*
-%{_mandir}/man1/getcifsacl.1.*
-%{_mandir}/man1/setcifsacl.1.*
+%{_mandir}/man1/getcifsacl.1*
+%{_mandir}/man1/setcifsacl.1*
+
