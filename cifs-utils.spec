@@ -23,7 +23,7 @@ BuildRequires:	pkgconfig(talloc)
 BuildRequires:	pkgconfig(libcap-ng)
 BuildRequires:	keyutils-devel
 BuildRequires:	krb5-devel
-BuildRequires:	wbclient-devel
+BuildRequires:	pkgconfig(wbclient)
 BuildRequires:	gnupg
 Suggests:	sudo nss_wins
 Provides:	mount-cifs = %{version}
