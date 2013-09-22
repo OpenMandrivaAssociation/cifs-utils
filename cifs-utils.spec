@@ -24,6 +24,7 @@ BuildRequires:	pkgconfig(libcap-ng)
 BuildRequires:	keyutils-devel
 BuildRequires:	krb5-devel
 BuildRequires:	pkgconfig(wbclient)
+BuildRequires:	samba-winbind
 BuildRequires:	gnupg
 Suggests:	sudo nss_wins
 Provides:	mount-cifs = %{version}
