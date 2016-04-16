@@ -10,14 +10,14 @@ rm -Rf $GNUPGHOME ;\
 
 Summary:	Tools for Managing Linux CIFS Client Filesystems
 Name:		cifs-utils
-Version:	6.1
+Version:	6.5
 License:	GPLv3
 Group:		Networking/Other
-Release:	11
+Release:	1
 URL:		http://www.samba.org/linux-cifs/cifs-utils/
-Source0:	ftp://ftp.samba.org/pub/linux-cifs/cifs-utils/%{name}-%{version}.tar.bz2
-Source1:	ftp://ftp.samba.org/pub/linux-cifs/cifs-utils/%{name}-%{version}.tar.bz2.asc
-Source2:	ftp://ftp.samba.org/pub/linux-cifs/cifs-utils/cifs-utils-pubkey_70F3B981.asc
+Source0:	http://download.samba.org/pub/linux-cifs/cifs-utils/%{name}-%{version}.tar.bz2
+Source1:	http://download.samba.org/pub/linux-cifs/cifs-utils//%{name}-%{version}.tar.bz2.asc
+Source2:	http://download.samba.org/pub/linux-cifs/cifs-utils/cifs-utils-pubkey_70F3B981.asc
 BuildRequires:	autoconf automake libtool
 BuildRequires:	pkgconfig(talloc)
 BuildRequires:	pkgconfig(libcap-ng)
@@ -26,6 +26,7 @@ BuildRequires:	krb5-devel
 BuildRequires:	pkgconfig(wbclient)
 BuildRequires:	samba-winbind
 BuildRequires:	gnupg
+BuildRequires:	pam-devel
 Suggests:	sudo nss_wins
 Provides:	mount-cifs = %{version}
 Obsoletes:	mount-cifs <= 5.8
@@ -41,6 +42,20 @@ Group:		Development/C
 %description	devel
 This package contains the header file necessary for building ID mapping
 plugins for cifs-utils.
+
+%package -n pam_cifscreds
+Summary:        PAM module to manage NTLM credentials in kernel keyring
+Group:          Networking/Other
+
+%description -n pam_cifscreds
+The pam_cifscreds PAM module is a tool for automatically adding
+credentials (username and password) for the purpose of establishing
+sessions in multiuser mounts.
+
+When a cifs filesystem is mounted with the "multiuser" option, and does
+not use krb5 authentication, it needs to be able to get the credentials
+for each user from somewhere. The pam_cifscreds module can be used to
+provide these credentials to the kernel automatically at login.
 
 %prep
 %check_sig %{SOURCE2} %{SOURCE1} %{SOURCE0}
@@ -92,3 +107,7 @@ cp contrib/request-key.d/README contrib/request-key.d/README.keyutils-1.5.5
 
 %files devel
 %{_includedir}/cifsidmap.h
+
+%files -n pam_cifscreds
+%{_libdir}/security/pam_cifscreds.so
+%{_mandir}/man8/pam_cifscreds.8.*

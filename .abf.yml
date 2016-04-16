@@ -1,9 +1,4 @@
-removed_sources:
-  cifs-utils-5.7.tar.bz2: 4a997fa0cef3b7c4ba4c5b959b52ca73437b8098
-  cifs-utils-5.8.tar.bz2: ed96d7ef9164a7784a7ecef705857b63d3ffccdb
 sources:
-  cifs-utils-5.7.tar.bz2.asc: 3e88e6bf5d9f07d41d44abe07eab806983637eb5
-  cifs-utils-5.8.tar.bz2.asc: aba9e2464f5c14eb15cae58c6121d9c68fe567aa
-  cifs-utils-6.1.tar.bz2: 58f83117834f4a07b7dbf6cc18af40c429394d13
-  cifs-utils-6.1.tar.bz2.asc: 78800e70aa7053c0cc9479879e8a1bd02a15d849
+  cifs-utils-6.5.tar.bz2: 072d558acf1d464621cce73b45c523e574d19c90
+  cifs-utils-6.5.tar.bz2.asc: 06b77a7a3758261866e142563baa43fa899d0b42
   cifs-utils-pubkey_70F3B981.asc: 8d1c3363ca3a904308cbca4b34163db8e25ced46
