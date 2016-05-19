@@ -13,7 +13,7 @@ Name:		cifs-utils
 Version:	6.5
 License:	GPLv3
 Group:		Networking/Other
-Release:	1
+Release:	2
 URL:		http://www.samba.org/linux-cifs/cifs-utils/
 Source0:	http://download.samba.org/pub/linux-cifs/cifs-utils/%{name}-%{version}.tar.bz2
 Source1:	http://download.samba.org/pub/linux-cifs/cifs-utils//%{name}-%{version}.tar.bz2.asc
@@ -65,7 +65,7 @@ provide these credentials to the kernel automatically at login.
 
 %build
 %serverbuild
-%configure2_5x \
+%configure \
     --sbindir=/sbin \
     --enable-cifsacl \
     --enable-cifsidmap \
@@ -74,9 +74,6 @@ provide these credentials to the kernel automatically at login.
 
 %install
 %makeinstall_std
-ln -s ../sbin/mount.cifs %{buildroot}%{_bindir}/mount.cifs
-# Hack for smb4k
-ln -s umount %{buildroot}%{_bindir}/umount.cifs
 
 mkdir -p %{buildroot}%{_sysconfdir}/%{name}
 ln -s %{_libdir}/%{name}/idmapwb.so %{buildroot}%{_sysconfdir}/%{name}/idmap-plugin
@@ -96,8 +93,6 @@ cp contrib/request-key.d/README contrib/request-key.d/README.keyutils-1.5.5
 /sbin/cifs.idmap
 /sbin/mount.cifs
 %{_libdir}/%{name}/idmapwb.so
-%{_bindir}/mount.cifs
-%{_bindir}/umount.cifs
 %{_mandir}/man8/cifs.upcall.8*
 %{_mandir}/man8/cifs.idmap.8*
 %{_mandir}/man8/mount.cifs.8*
