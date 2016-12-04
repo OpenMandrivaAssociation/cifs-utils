@@ -1,4 +1,4 @@
 sources:
-  cifs-utils-6.5.tar.bz2: 072d558acf1d464621cce73b45c523e574d19c90
-  cifs-utils-6.5.tar.bz2.asc: 06b77a7a3758261866e142563baa43fa899d0b42
+  cifs-utils-6.6.tar.bz2: 4a223df44dabe1601a72298c19a85eaff3f6a3b4
+  cifs-utils-6.6.tar.bz2.asc: cf03d09cd7591612ee0446740f4aad8ec85a4f25
   cifs-utils-pubkey_70F3B981.asc: 8d1c3363ca3a904308cbca4b34163db8e25ced46
