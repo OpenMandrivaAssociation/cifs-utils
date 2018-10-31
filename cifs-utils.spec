@@ -13,7 +13,7 @@ Name:		cifs-utils
 Version:	6.6
 License:	GPLv3
 Group:		Networking/Other
-Release:	1
+Release:	2
 URL:		http://www.samba.org/linux-cifs/cifs-utils/
 Source0:	http://download.samba.org/pub/linux-cifs/cifs-utils/%{name}-%{version}.tar.bz2
 Source1:	http://download.samba.org/pub/linux-cifs/cifs-utils//%{name}-%{version}.tar.bz2.asc
