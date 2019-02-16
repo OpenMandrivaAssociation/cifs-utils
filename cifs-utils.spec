@@ -27,6 +27,7 @@ BuildRequires:	pkgconfig(wbclient)
 BuildRequires:	samba-winbind
 BuildRequires:	gnupg
 BuildRequires:	pam-devel
+BuildRequires:	python-docutils
 Suggests:	sudo nss_wins
 Provides:	mount-cifs = %{version}
 Obsoletes:	mount-cifs <= 5.8
