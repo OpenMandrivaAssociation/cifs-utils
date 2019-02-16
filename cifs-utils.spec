@@ -10,10 +10,10 @@ rm -Rf $GNUPGHOME ;\
 
 Summary:	Tools for Managing Linux CIFS Client Filesystems
 Name:		cifs-utils
-Version:	6.6
+Version:	6.8
 License:	GPLv3
 Group:		Networking/Other
-Release:	2
+Release:	1
 URL:		http://www.samba.org/linux-cifs/cifs-utils/
 Source0:	http://download.samba.org/pub/linux-cifs/cifs-utils/%{name}-%{version}.tar.bz2
 Source1:	http://download.samba.org/pub/linux-cifs/cifs-utils//%{name}-%{version}.tar.bz2.asc
@@ -58,10 +58,9 @@ for each user from somewhere. The pam_cifscreds module can be used to
 provide these credentials to the kernel automatically at login.
 
 %prep
-%check_sig %{SOURCE2} %{SOURCE1} %{SOURCE0}
+#check_sig %{SOURCE2} %{SOURCE1} %{SOURCE0}
 
-%setup -q
-%apply_patches
+%autosetup -p1
 
 %build
 %serverbuild
