@@ -10,7 +10,7 @@ rm -Rf $GNUPGHOME ;\
 
 Summary:	Tools for Managing Linux CIFS Client Filesystems
 Name:		cifs-utils
-Version:	6.8
+Version:	6.9
 License:	GPLv3
 Group:		Networking/Other
 Release:	1
@@ -70,10 +70,10 @@ provide these credentials to the kernel automatically at login.
     --enable-cifsacl \
     --enable-cifsidmap \
 
-%make
+%make_build
 
 %install
-%makeinstall_std
+%make_install
 
 mkdir -p %{buildroot}%{_sysconfdir}/%{name}
 ln -s %{_libdir}/%{name}/idmapwb.so %{buildroot}%{_sysconfdir}/%{name}/idmap-plugin
