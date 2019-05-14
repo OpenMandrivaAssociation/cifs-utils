@@ -89,6 +89,7 @@ cp contrib/request-key.d/README contrib/request-key.d/README.keyutils-1.5.5
 %config(noreplace) %{_sysconfdir}/request-key.d/cifs.spnego.conf
 %{_bindir}/cifscreds
 %{_bindir}/*etcifsacl
+%{_bindir}/smbinfo
 /sbin/cifs.upcall
 /sbin/cifs.idmap
 /sbin/mount.cifs
@@ -99,6 +100,7 @@ cp contrib/request-key.d/README contrib/request-key.d/README.keyutils-1.5.5
 %{_mandir}/man8/idmapwb.8*
 %{_mandir}/man1/*etcifsacl.1*
 %{_mandir}/man1/cifscreds.1*
+%{_mandir}/man1/smbinfo.1*
 
 %files devel
 %{_includedir}/cifsidmap.h
