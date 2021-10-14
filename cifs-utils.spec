@@ -13,7 +13,7 @@ Name:		cifs-utils
 Version:	6.9
 License:	GPLv3
 Group:		Networking/Other
-Release:	1
+Release:	2
 URL:		http://www.samba.org/linux-cifs/cifs-utils/
 Source0:	http://download.samba.org/pub/linux-cifs/cifs-utils/%{name}-%{version}.tar.bz2
 Source1:	http://download.samba.org/pub/linux-cifs/cifs-utils//%{name}-%{version}.tar.bz2.asc
@@ -94,17 +94,17 @@ cp contrib/request-key.d/README contrib/request-key.d/README.keyutils-1.5.5
 /sbin/cifs.idmap
 /sbin/mount.cifs
 %{_libdir}/%{name}/idmapwb.so
-%{_mandir}/man8/cifs.upcall.8*
-%{_mandir}/man8/cifs.idmap.8*
-%{_mandir}/man8/mount.cifs.8*
-%{_mandir}/man8/idmapwb.8*
-%{_mandir}/man1/*etcifsacl.1*
-%{_mandir}/man1/cifscreds.1*
-%{_mandir}/man1/smbinfo.1*
+%doc %{_mandir}/man8/cifs.upcall.8*
+%doc %{_mandir}/man8/cifs.idmap.8*
+%doc %{_mandir}/man8/mount.cifs.8*
+%doc %{_mandir}/man8/idmapwb.8*
+%doc %{_mandir}/man1/*etcifsacl.1*
+%doc %{_mandir}/man1/cifscreds.1*
+%doc %{_mandir}/man1/smbinfo.1*
 
 %files devel
 %{_includedir}/cifsidmap.h
 
 %files -n pam_cifscreds
 %{_libdir}/security/pam_cifscreds.so
-%{_mandir}/man8/pam_cifscreds.8.*
+%doc %{_mandir}/man8/pam_cifscreds.8.*
