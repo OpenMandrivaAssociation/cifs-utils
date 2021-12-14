@@ -10,10 +10,10 @@ rm -Rf $GNUPGHOME ;\
 
 Summary:	Tools for Managing Linux CIFS Client Filesystems
 Name:		cifs-utils
-Version:	6.9
+Version:	6.14
 License:	GPLv3
 Group:		Networking/Other
-Release:	2
+Release:	1
 URL:		http://www.samba.org/linux-cifs/cifs-utils/
 Source0:	http://download.samba.org/pub/linux-cifs/cifs-utils/%{name}-%{version}.tar.bz2
 Source1:	http://download.samba.org/pub/linux-cifs/cifs-utils//%{name}-%{version}.tar.bz2.asc
@@ -90,9 +90,12 @@ cp contrib/request-key.d/README contrib/request-key.d/README.keyutils-1.5.5
 %{_bindir}/cifscreds
 %{_bindir}/*etcifsacl
 %{_bindir}/smbinfo
+%{_bindir}/smb2-quota
 /sbin/cifs.upcall
 /sbin/cifs.idmap
 /sbin/mount.cifs
+/sbin/mount.smb3
+
 %{_libdir}/%{name}/idmapwb.so
 %doc %{_mandir}/man8/cifs.upcall.8*
 %doc %{_mandir}/man8/cifs.idmap.8*
@@ -101,6 +104,9 @@ cp contrib/request-key.d/README contrib/request-key.d/README.keyutils-1.5.5
 %doc %{_mandir}/man1/*etcifsacl.1*
 %doc %{_mandir}/man1/cifscreds.1*
 %doc %{_mandir}/man1/smbinfo.1*
+%doc %{_mandir}/man1/smb2-quota.1.*
+%doc %{_mandir}/man8/mount.smb3.8.*
+
 
 %files devel
 %{_includedir}/cifsidmap.h
