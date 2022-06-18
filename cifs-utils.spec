@@ -10,7 +10,7 @@ rm -Rf $GNUPGHOME ;\
 
 Summary:	Tools for Managing Linux CIFS Client Filesystems
 Name:		cifs-utils
-Version:	6.14
+Version:	6.15
 License:	GPLv3
 Group:		Networking/Other
 Release:	1
@@ -66,13 +66,17 @@ provide these credentials to the kernel automatically at login.
 %build
 %serverbuild
 %configure \
-    --sbindir=/sbin \
-    --enable-cifsacl \
-    --enable-cifsidmap \
+	--sbindir=%{_bindir} \
+	--enable-cifsacl \
+	--enable-cifsidmap
 
 %make_build
 
 %install
+# "make install" places compat symlinks there.
+# We can wipe them later, but "make install"
+# fails if the directory isn't there
+mkdir -p %{buildroot}/sbin
 %make_install
 
 mkdir -p %{buildroot}%{_sysconfdir}/%{name}
@@ -81,6 +85,9 @@ mkdir -p %{buildroot}%{_sysconfdir}/request-key.d
 install -m 644 contrib/request-key.d/cifs.idmap.conf %{buildroot}%{_sysconfdir}/request-key.d
 install -m 644 contrib/request-key.d/cifs.spnego.conf %{buildroot}%{_sysconfdir}/request-key.d
 cp contrib/request-key.d/README contrib/request-key.d/README.keyutils-1.5.5
+
+mv %{buildroot}/sbin/* %{buildroot}%{_bindir}
+rmdir %{buildroot}/sbin
 
 %files
 %doc AUTHORS README doc/linux-cifs-client-guide.odt contrib/request-key.d/README.keyutils-1.5.5
@@ -91,10 +98,10 @@ cp contrib/request-key.d/README contrib/request-key.d/README.keyutils-1.5.5
 %{_bindir}/*etcifsacl
 %{_bindir}/smbinfo
 %{_bindir}/smb2-quota
-/sbin/cifs.upcall
-/sbin/cifs.idmap
-/sbin/mount.cifs
-/sbin/mount.smb3
+%{_bindir}/cifs.upcall
+%{_bindir}/cifs.idmap
+%{_bindir}/mount.cifs
+%{_bindir}/mount.smb3
 
 %{_libdir}/%{name}/idmapwb.so
 %doc %{_mandir}/man8/cifs.upcall.8*
