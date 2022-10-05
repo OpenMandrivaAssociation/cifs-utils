@@ -1,3 +1,4 @@
 sources:
   cifs-utils-pubkey_70F3B981.asc: 8d1c3363ca3a904308cbca4b34163db8e25ced46
-  cifs-utils-6.15.tar.bz2: b43c93b841b1819bc11e207a2043dc8c08f30b4c
+  cifs-utils-7.0.tar.bz2: 9df055a73d89ed3d536828d0cea304c9e04139d4
+  cifs-utils-7.0.tar.bz2.asc: ac40223e272722364c4bbb9e8ac1a7d621f645f5
