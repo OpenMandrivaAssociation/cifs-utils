@@ -10,7 +10,7 @@ rm -Rf $GNUPGHOME ;\
 
 Summary:	Tools for Managing Linux CIFS Client Filesystems
 Name:		cifs-utils
-Version:	7.1
+Version:	7.3
 License:	GPLv3
 Group:		Networking/Other
 Release:	1
