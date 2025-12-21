@@ -18,6 +18,8 @@ URL:		https://www.samba.org/linux-cifs/cifs-utils/
 Source0:	http://download.samba.org/pub/linux-cifs/cifs-utils/%{name}-%{version}.tar.bz2
 Source1:	http://download.samba.org/pub/linux-cifs/cifs-utils//%{name}-%{version}.tar.bz2.asc
 Source2:	http://download.samba.org/pub/linux-cifs/cifs-utils/cifs-utils-pubkey_70F3B981.asc
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
 BuildRequires:	autoconf automake libtool
 BuildRequires:	pkgconfig(talloc)
 BuildRequires:	pkgconfig(libcap-ng)
