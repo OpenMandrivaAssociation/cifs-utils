@@ -10,17 +10,16 @@ rm -Rf $GNUPGHOME ;\
 
 Summary:	Tools for Managing Linux CIFS Client Filesystems
 Name:		cifs-utils
-Version:	7.3
+Version:	7.9
 License:	GPLv3
 Group:		Networking/Other
 Release:	1
 URL:		https://www.samba.org/linux-cifs/cifs-utils/
 Source0:	http://download.samba.org/pub/linux-cifs/cifs-utils/%{name}-%{version}.tar.bz2
 Source1:	http://download.samba.org/pub/linux-cifs/cifs-utils//%{name}-%{version}.tar.bz2.asc
-Source2:	http://download.samba.org/pub/linux-cifs/cifs-utils/cifs-utils-pubkey_70F3B981.asc
-BuildRequires:	libtool-base
-BuildRequires:	slibtool
-BuildRequires:	autoconf automake libtool
+Source2:	http://download.samba.org/pub/linux-cifs/cifs-utils/cifs-utils-pubkey_0642D5A0.asc
+BuildRequires:	autoconf
+BuildRequires:	automake
 BuildRequires:	pkgconfig(talloc)
 BuildRequires:	pkgconfig(libcap-ng)
 BuildRequires:	keyutils-devel

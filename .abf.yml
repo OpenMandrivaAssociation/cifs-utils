@@ -1,3 +1,4 @@
 sources:
-  cifs-utils-pubkey_70F3B981.asc: 8d1c3363ca3a904308cbca4b34163db8e25ced46
-  cifs-utils-7.3.tar.bz2: 953a46870ecf6f9f73f40c7e0e3b861b4e35baf9
+  cifs-utils-7.9.tar.bz2: 9ebfd6ebf681bed6875f2c10064649ed3fda4d99
+  cifs-utils-7.9.tar.bz2.asc: 0fb46d3a293e14e24eff7a9a8940c3d339973399
+  cifs-utils-pubkey_0642D5A0.asc: 7d8f746c2006defcf708371e47d4272f8a481b44
